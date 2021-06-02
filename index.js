@@ -15,6 +15,7 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .get('/kontakt', (req, res) => res.render('pages/kontakt'))
+  .get('/uudised', (req, res) => res.render('pages/uudised'))
   .get('/aeg', aeg) // ise lisatud
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
