@@ -1,0 +1,131 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.paisetaust {
+    background-image: url('./pildid/Hills@2x.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 979px;
+    /*opacity: 0.9;*/
+}
+
+.navigatsioon {
+    padding-top: 32px;
+    color: #0B0B0B;
+
+}
+
+.logopilt {
+    width: 75px;
+    height: 75px;
+}
+
+.lehetiitel {
+    font-size: 33px;
+    font-weight: 800;
+    letter-spacing: 0px;
+    width: 126px;
+    line-height: 34px;
+}
+
+.menyyala .nav a {
+    font-size: 16.67px;
+    line-height: 75px;
+    font-weight: 700;
+    letter-spacing: 2.67px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.menyyala .nav li {
+    margin-left: 10px;
+}
+
+.pealkirjad {
+    /*padding-top: 910px;*/
+    padding-top: 310px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 60px;
+    letter-spacing: 0px;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0px;
+}
+
+.pealkirjad h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.liblikas1 {
+    height: 66px;
+    display: block;
+    margin-top: -40px;
+}
+
+img.liblikas2 {
+    width: 62px;
+    height: 32px;
+}
+
+.rida2.d-flex {
+    margin-left: -60px;
+}
+
+.paisepilt {
+    overflow: hidden;
+}
+
+.paisepilt .matkaja {
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -400px;
+}
+
+.paisepilt .vari {
+    width: 1091px;
+    height: 87px;
+    margin-top: -40px;
+    margin-right: -152px;
+}
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 95%;
+    }
+}
+
+@media screen and (min-width: 1480px) {
+    .paisetaust {
+        background: transparent url('./pildid/Hills@2x.png') 50% 50% no-repeat padding-box;
+    }
+}
+
+/*
+    Kontakteerumisala nihutamine kontaktide lehel
+*/
+.kontakteerumisala {
+    width: 800px;
+    height: 800px;
+    padding-top: 60 px;
+    margin-left: 10px;
+}
+
+/*
+    Kontaktide lehe lahtrile rohelise omistamine
+*/
+
+#teadeKasutajale {
+    color: green;
+}
