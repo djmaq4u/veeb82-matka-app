@@ -14,6 +14,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .get('/kontakt', (req, res) => res.render('pages/kontakt'))
   .get('/aeg', aeg) // ise lisatud
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
