@@ -34,7 +34,7 @@ const matk4 = {
 
 const matkad = [matk1, matk2, matk3, matk4]
 
-function naitaMatkaAndmeid(matk) {
+function naitaMatkaAndmeid(matk, indeks) {
     const valjundElement = document.getElementById("matkade_valjund")
     const vabadKohad = matk.kohti - matk.registreerunud.length
     let valjundHtml = `
@@ -48,7 +48,7 @@ function naitaMatkaAndmeid(matk) {
                 <p class="card-text">
                    ${matk.kirjeldus}
                 </p>
-                <a href="#" class="btn btn-success">Registreeru</a>
+                <a href="/registreeru/${indeks}" class="btn btn-success">Registreeru</a>
             </div>
         </div>
     `
@@ -56,6 +56,15 @@ function naitaMatkaAndmeid(matk) {
     valjundElement.innerHTML += valjundHtml
 }
 
+/*
+let i = 0;
 for (const matk of matkad) {
-    naitaMatkaAndmeid(matk)
+    naitaMatkaAndmeid(matk, i)
+    i++
 }
+*/
+
+//matkad.forEach((matk, indeks) => naitaMatkaAndmeid(matk, i))
+
+matkad.forEach(naitaMatkaAndmeid)
+
