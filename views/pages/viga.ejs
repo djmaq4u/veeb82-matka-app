@@ -12,6 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <title>Matkaklubi | Kontakt</title>
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid paisetaust">
@@ -22,12 +28,16 @@
                 
                 <h3>Viga</h3>
                 
-                <p><%= veateade %></p>
+                <p id="punane"><%= veateade %></p>
+
+                <button><a href="/">Tagasi esilehele</a></button>
             </div>
 
+            <br>
+            
         </div>
     </div>
 
-    <script src="/kontakt.js"></script>
+    <script src="/index.js"></script>
 </body>
 </html>

@@ -44,9 +44,20 @@ function aeg(req, res) {
   
 }
 
+// KODUTÖÖ -- kui sisest. vale nr, siis anda teade: a'la "sellist matka pole olemas"
 function registreeru (req, res) {
+
+  if (isNaN(req.params.matk)) {
+    return res.render("pages/viga", {veateade: "Ilmnes viga: ssisesta siiski matka-number :)"})
+  }
+
+  if (req.params.matk >= matkad.length) {
+    return res.render("pages/viga", {veateade: "Ilmnes viga: sellist matkanumbrit meil pole :(("})
+  }
+  
   const matk = req.params.matk
   const matkaAndmed = matkad[matk]
+  //renderdame malli
   res.render("pages/registreeru", {matkaNumber: matk, matkaAndmed: matkaAndmed})
 }
 
@@ -64,6 +75,7 @@ function lisaRegistreerumine(req, res) {
   const matk = matkad[req.query.matk]
   matk.registreerunud.push(registreerumine)
 
+  // ka backendi poolel saab testimiseks console log-i kasutada ja näidatakse matkaobjekti seejärel
   console.log(matk)
 
   res.send(`Saadeti andmed: matk: ${registreerumine.matk} nimi - ${registreerumine.nimi}, email: ${registreerumine.email}, kokku registreerunuid: ${matk.registreerunud.length}`)
