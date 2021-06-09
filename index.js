@@ -2,7 +2,7 @@ const matk1 = {
   nimetus: "Jalgsimatk Kõrvemaal",
   pildiURL: "./pildid/BMW_pealtnagija_foto.jpg",
   kohti: 12,
-  kirjeldus: "Kõnnime palju aga loodus on ilus. Lõuna lõkkel.",
+  kirjeldus: "Kõrvemaal ootavad Sind võrratu loodusmaastik, tähistatud tervise-, matka- ja loodusrajad.",
   registreerunud: [],
 }
 
@@ -10,7 +10,7 @@ const matk2 = {
   nimetus: "Süstamatk ümber Hiiumaa",
   pildiURL: "./pildid/klassikas.jpg",
   kohti: 6,
-  kirjeldus: "Sõidame palju aga loodus on ilus. Lõuna lõkkel.",
+  kirjeldus: "Hiiumaa laiud on parimaks süstamatka piirkonnaks Baltimaades.",
   registreerunud: [],
 }
 
@@ -18,7 +18,7 @@ const matk3 = {
   nimetus: "Jalgrattamatk Virumaal",
   pildiURL: "./pildid/126_2667.JPG",
   kohti: 10,
-  kirjeldus: "Sõidame palju aga loodus on ilus. Lõuna lõkkel.",
+  kirjeldus: "Ida-Virumaa, mis on tuntud rohkem tööstuslinnade ja tuhamägede poolest, võlub mererandade, pankranniku ning looduslike matkaradadega.",
   registreerunud: [],
 }
 
@@ -26,7 +26,7 @@ const matk4 = {
   nimetus: "Kepikõnnimatk ümber Tartu",
   pildiURL: "./pildid/Mon_25.bmp",
   kohti: 2,
-  kirjeldus: "Sõidame palju aga loodus on ilus. Lõuna lõkkel.",
+  kirjeldus: "Emajõe Ateenas on lihtsalt mõnus komberdada!",
   registreerunud: [],
 }
 
@@ -84,6 +84,13 @@ function lisaRegistreerumine(req, res) {
 
 }
 
+function saadaMatkad(req, res) {
+  const avalikudAndmed = matkad.map((matk) => {
+    return { ...matk, registreerunud: matk.registreerunud.length}
+  })
+  res.send(avalikudAndmed)
+}
+
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
@@ -96,6 +103,8 @@ express()
   // teeme aadressid, mis mõeldud masinloetavaks (api)
   // matkale registreerunu andmete kirjapanekuks
   .get('/api/registreeru', lisaRegistreerumine)
+  // küsime kõigi matkade andmed
+  .get('/api/matkad', saadaMatkad)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 

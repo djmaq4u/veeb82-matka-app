@@ -24,20 +24,29 @@
                 <p>
                     <%= matkaAndmed.kirjeldus %>
                 </p>
+                <p>
+                    <!--Kuvan info elegantselt öeldes, et "enne Teid" -- see ei kohusta suurendama registreerunute arvu asünkroonselt eksootilisi teid pidi hiljem -->
+                    Sellele matkale on registreerunud enne Teid inimesi täpselt <%= matkaAndmed.registreerunud.length %> (kohti kokku <%= matkaAndmed.kohti %>).
+                </p>
                 <div class="sisestus">
                     <label for="nimi">Teie nimi/e-mail:</label>
                     <input type="text" name="nimi" id="nimi" size="30"><br>
                     <label for="teade">Teade:</label><br>
                     <textarea id="teade" name="teade" rows="5" cols="60"></textarea><br>
-                    <button onclick="kliendiTagasiside()">Saada!</button>
+                    <!--index.js-st saab mall registreeru.ejs oma andmed!!!!!!!-->
+                    <button id="saatmiseLyliti" onclick="registreeru(<%= matkaNumber %>)">Saada!</button>
+                    
                 </div>
                 
                 <div id="teadeKasutajale"></div>
+                <div>
+                    <button id="naasmiseLyliti" onclick="pealehele()">&lt;&lt;Tagasi pealehele!</button>
+                </div>
             </div>
 
         </div>
     </div>
 
-    <script src="/kontakt.js"></script>
+    <script src="/registreeru.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@ const matk1 = {
     nimetus: "Jalgsimatk Kõrvemaal",
     pildiURL: "./pildid/BMW_pealtnagija_foto.jpg",
     kohti: 12,
-    kirjeldus: "Kõnnime palju aga loodus on ilus. Lõuna lõkkel.",
+    kirjeldus: "Kõrvemaal ootavad Sind võrratu loodusmaastik, tähistatud tervise-, matka- ja loodusrajad.",
     registreerunud: ['Mati', 'Kati', 'Rebase-Rein', 'Jänku Juta'],
 }
 
@@ -12,7 +12,7 @@ const matk2 = {
     nimetus: "Süstamatk ümber Hiiumaa",
     pildiURL: "./pildid/klassikas.jpg",
     kohti: 6,
-    kirjeldus: "Sõidame palju aga loodus on ilus. Lõuna lõkkel.",
+    kirjeldus: "Hiiumaa laiud on parimaks süstamatka piirkonnaks Baltimaades.",
     registreerunud: ['Rebase-Rein', 'Jänku Juta'],
 }
 
@@ -20,7 +20,7 @@ const matk3 = {
     nimetus: "Jalgrattamatk Virumaal",
     pildiURL: "./pildid/126_2667.JPG",
     kohti: 10,
-    kirjeldus: "Sõidame palju aga loodus on ilus. Lõuna lõkkel.",
+    kirjeldus: "Ida-Virumaa, mis on tuntud rohkem tööstuslinnade ja tuhamägede poolest, võlub mererandade, pankranniku ning looduslike matkaradadega.",
     registreerunud: ['Rebase-Rein', 'Jänku Juta'],
 }
 
@@ -28,7 +28,7 @@ const matk4 = {
     nimetus: "Kepikõnnimatk ümber Tartu",
     pildiURL: "./pildid/Mon_25.bmp",
     kohti: 2,
-    kirjeldus: "Sõidame palju aga loodus on ilus. Lõuna lõkkel.",
+    kirjeldus: "Emajõe Ateenas on lihtsalt mõnus komberdada!",
     registreerunud: ['Järviste Andres'],
 }
 
@@ -46,7 +46,7 @@ function naitaMatkaAndmeid(matk, indeks) {
                    ${matk.kirjeldus}
                 </p>
                 <p class="card-text">
-                   ${matk.kirjeldus}
+                   Veel on vabu kohti: ${vabadKohad}
                 </p>
                 <a href="/registreeru/${indeks}" class="btn btn-success">Registreeru</a>
             </div>
